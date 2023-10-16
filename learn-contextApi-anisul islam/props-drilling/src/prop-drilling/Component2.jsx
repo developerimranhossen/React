@@ -1,8 +1,8 @@
 import Component3 from "./Component3"
 
-function Component2() {
+function Component2({user}) {
     return (
-      <Component3 />
+      <Component3 user={user}/>
     )
   }
   

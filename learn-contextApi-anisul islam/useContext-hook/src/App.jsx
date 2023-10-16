@@ -1,4 +1,4 @@
-import { useState } from "react"
+
 import Component1 from "./prop-drilling/Component1"
 
 function App() {
