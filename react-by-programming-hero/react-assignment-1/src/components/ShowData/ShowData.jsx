@@ -1,8 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 function ShowData({ data, btnHandle }) {
   // console.log('hello', btnHandle);
   const { id, picture, title, time, name, profilePicture } = data;
+
+  // to changed bookmark icon background-color
+  const [isTrue, setIsTrue] = useState(false)
+  const clickHandler = () => setIsTrue(!isTrue)
   return (
     <div className="h-[821px] w-[845px]">
       <img
@@ -26,11 +31,11 @@ function ShowData({ data, btnHandle }) {
             </p>
           </div>
         </div>
-        <div className="">
+        <div onClick={clickHandler} className="">
           <button onClick={() => btnHandle(data)}>
             {time} min read {}
             <FontAwesomeIcon id="icon"
-              className="text-gray-500 hover:text-red-400"
+              className={`${isTrue ? 'text-red-500' : 'text-gray-500'}`}
               icon={faBookmark}
             />
           </button>
