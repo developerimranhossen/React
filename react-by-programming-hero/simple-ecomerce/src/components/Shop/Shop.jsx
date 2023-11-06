@@ -45,7 +45,7 @@ function Shop() {
     setCart([...cart, product]);
     addToDb(product.id);
   };
-  console.log(cart);
+  // console.log(cart);
 
   return (
     <div className="shop-container">

@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import "./Header.css"
 
 function Header() {
   return (
     <nav>
-        <Link to="/">Home</Link>
-        <Link to="/friends">Friends</Link>
+        <NavLink className={({isActive}) => isActive ? 'active' : ''} to="/">Home</NavLink>
+        <NavLink className={({isActive}) => isActive ? 'active' : ''} to="/friends">Friends</NavLink>
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
     </nav>
